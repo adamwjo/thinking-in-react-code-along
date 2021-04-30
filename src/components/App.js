@@ -5,14 +5,22 @@ import Navbar  from './Navbar'
 import PokeContainer from './PokeContainer'
 import Home from './Home'
 
-export default class App extends Component {
+const BASE_URL = "http://localhost:3001/pokemon/"
 
+export default class App extends Component {
+  
  
 
   state = {
     display: "Home",
     searchText: "",
     pokemons: []
+  }
+
+  componentDidMount(){
+    fetch(BASE_URL)
+      .then(res => res.json())
+      .then(pokemons => this.setState({ pokemons }))
   }
 
   // Takes in a new pokemon object and adds it state
@@ -40,9 +48,44 @@ export default class App extends Component {
   // Takes in a pokemon and removes it from state 
   deletePokemon = (pokemonObj) => {
     const newPokemons = this.state.pokemons.filter(pokemon=> pokemon.id !== pokemonObj.id)
-    this.setState({
+
+    // delete id of the object we are trying to delete
+    // tell the server that the request is a DELETE request 
+
+    fetch(BASE_URL+pokemonObj.id, {method: "DELETE"})
+      .then(() => this.setState({
       pokemons: newPokemons
-    })
+    }))
+  }
+
+  feedPokemon = (pokemonObj) => {
+    //Find the pokemon we clicked on 
+    const oldPoke = this.state.pokemons.find(pokemon => pokemonObj.id === pokemon.id )
+
+    //Find the index of the pokemon in state so that we can remove/splice it out
+    const oldIndex = this.state.pokemons.indexOf(oldPoke)
+
+    //Make a new array where this.state.pokemon has the pokemon we clicked on filtered out 
+    const filteredOutPokemon = this.state.pokemons.filter(pokemon => pokemon.id !== oldPoke.id)
+
+    //update the pokemon object
+    const updatedPoke = {...oldPoke, weight: oldPoke.weight + 10}
+
+    console.log(updatedPoke)
+    //insert back in the same index 
+    filteredOutPokemon.splice(oldIndex, 0, updatedPoke)
+
+    const reqObj = {
+      headers: {"Content-Type": "application/json"},
+      method: "PATCH",
+      body: JSON.stringify(updatedPoke)
+    }
+
+
+    fetch(BASE_URL+pokemonObj.id, reqObj)
+      .then(r => r.json())
+      .then(() => this.setState({ pokemons: filteredOutPokemon}))
+
   }
 
 
@@ -55,7 +98,7 @@ export default class App extends Component {
       <div className="bg-dark">
         <Navbar handleSearchText={this.handleSearchText} display={this.state.display} changeToHome={this.changeToHome} />
         { this.state.display === "Home" ? <Home changeToPokemon={this.changeToPokemon}/> : null }
-        { this.state.display === "Pokemon" ? <PokeContainer /> : null}
+        { this.state.display === "Pokemon" ? <PokeContainer feedPokemon={this.feedPokemon} deletePokemon={this.deletePokemon} createPokemon={this.createPokemon} pokemons={filteredPokemon}/> : null}
       </div>
     )
   }

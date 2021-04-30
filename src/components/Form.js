@@ -13,20 +13,20 @@ export default class Form extends Component {
     submitHandler = (e) => {
         e.preventDefault()
         
-        //Contains a new PokemonMon
-        const newPokemon = {
-            name: this.state.name,
-            weight: this.state.weight,
-            sprite: this.state.sprite,
-            type: this.state.type,
-            description: this.state.description
-        }
+        // //Contains a new PokemonMon
+        // const newPokemon = {
+        //     name: this.state.name,
+        //     weight: this.state.weight,
+        //     sprite: this.state.sprite,
+        //     type: this.state.type,
+        //     description: this.state.description
+        // }
 
         //Make a reqObj
         const reqObj = {}
         reqObj.headers = {"Content-Type": "application/json"}
         reqObj.method = "POST"
-        reqObj.body = JSON.stringify(newPokemon)
+        reqObj.body = JSON.stringify({...this.state})
 
   
        

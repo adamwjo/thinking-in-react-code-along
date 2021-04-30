@@ -27,7 +27,7 @@
     {
       "id": 4,
       "name": "charmander",
-      "weight": 10,
+      "weight": 70,
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
       "type": "fire",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
@@ -127,6 +127,14 @@
       "type": "Psychic",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utsdfgsdgfdsfg",
       "id": 25
+    },
+    {
+      "name": "Nicepokemon",
+      "weight": "1222",
+      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/432.png",
+      "type": "Psychic",
+      "description": "sadklfjaskljdfhkasjdhfkjalsdfhkasdjhfaskdjhfasz",
+      "id": 28
     }
   ]
 }
