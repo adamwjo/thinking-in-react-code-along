@@ -27,7 +27,7 @@
     {
       "id": 4,
       "name": "charmander",
-      "weight": 10,
+      "weight": 40,
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
       "type": "fire",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"
@@ -98,7 +98,7 @@
     },
     {
       "name": "NewNewPOke",
-      "weight": "122",
+      "weight": 122,
       "type": "Grass",
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/311.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
@@ -106,7 +106,7 @@
     },
     {
       "name": "Turkeymon",
-      "weight": "1234",
+      "weight": 1234,
       "type": "Psychic",
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/333.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
@@ -114,7 +114,7 @@
     },
     {
       "name": "Coolmon",
-      "weight": "123",
+      "weight": 123,
       "type": "Water",
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/200.png",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
@@ -122,7 +122,7 @@
     },
     {
       "name": "Supermon",
-      "weight": "12",
+      "weight": 12,
       "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/246.png",
       "type": "Psychic",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utsdfgsdgfdsfg",
