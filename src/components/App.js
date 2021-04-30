@@ -15,7 +15,7 @@ export default class App extends Component {
     pokemons: []
   }
 
-  // Takes in a pokemon object and adds a new pokemon to state
+  // Takes in a new pokemon object and adds it state
   createPokemon = (pokemonObj) => {
     this.setState({pokemons: [pokemonObj, ...this.state.pokemons]})
   }
@@ -37,7 +37,7 @@ export default class App extends Component {
     })
   }
 
-  // Takes in a pokemon and adds it to state 
+  // Takes in a pokemon and removes it from state 
   deletePokemon = (pokemonObj) => {
     const newPokemons = this.state.pokemons.filter(pokemon=> pokemon.id !== pokemonObj.id)
     this.setState({
